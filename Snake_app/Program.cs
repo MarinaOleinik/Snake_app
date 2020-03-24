@@ -6,9 +6,12 @@ namespace Snake_app
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Hello World!");
+            Console.Title = "Snake";
+            Point p = new Point(4, 5, '*', false);
+            p.Draw(p.x,p.y,p.sym);
+            
             Console.ReadLine();
         }
+        
     }
 }
