@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Snake_app
 {
@@ -8,8 +9,10 @@ namespace Snake_app
         {
             Console.Title = "Snake";
             Point p = new Point(4, 5, '*', false);
-            p.Draw(p.x,p.y,p.sym);
-            
+            p.Draw();
+            List<int> numlist = new List<int>();
+
+
             Console.ReadLine();
         }
         

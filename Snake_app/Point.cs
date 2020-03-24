@@ -10,6 +10,10 @@ namespace Snake_app
         public int y;
         public char sym;
         public bool isPoison;
+        public Point()
+        {
+
+        }
         public Point(int x_, int y_, char sym_, bool isPoison)
         {
             x = x_;
@@ -17,7 +21,7 @@ namespace Snake_app
             sym = sym_;
             this.isPoison = isPoison;
         }
-        public void Draw(int x, int y, char sym)
+        public void Draw()
         {
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
