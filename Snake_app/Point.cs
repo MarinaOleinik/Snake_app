@@ -14,12 +14,12 @@ namespace Snake_app
         {
 
         }
-        public Point(int x_, int y_, char sym_, bool isPoison)
+        public Point(int x_, int y_, char sym_)
         {
             x = x_;
             y = y_;
             sym = sym_;
-            this.isPoison = isPoison;
+            //this.isPoison = isPoison;
         }
         public void Draw()
         {

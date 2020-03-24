@@ -8,13 +8,21 @@ namespace Snake_app
         static void Main(string[] args)
         {
             Console.Title = "Snake";
-            Point p = new Point(4, 5, '*', false);
+            Console.SetWindowSize(101, 26);
+            Point p = new Point(4, 5, '*');
             p.Draw();
-            List<int> numlist = new List<int>();
-
+            HorizontalLIne upline = new HorizontalLIne(0, 100, 0, '+');
+            HorizontalLIne downline = new HorizontalLIne(0, 100, 25, '+');
+            VerticalLine leftline = new VerticalLine(1, 25, 0, '+');
+            VerticalLine rightline = new VerticalLine(1, 25, 100, '+');
+            upline.Draw();
+            downline.Draw();
+            leftline.Draw();
+            rightline.Draw();
 
             Console.ReadLine();
         }
+        
         
     }
 }
