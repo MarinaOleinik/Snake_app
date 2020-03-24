@@ -5,7 +5,7 @@ using System.Text;
 namespace Snake_app
 {
     
-    class HorizontalLIne: Figure
+    class HorizontalLIne: Figure// наследование
     {
        
         public HorizontalLIne(int xLeft, int xReight, int y, char sym)
