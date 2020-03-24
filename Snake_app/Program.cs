@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Snake_app
 {
@@ -23,7 +24,13 @@ namespace Snake_app
             
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
-            Console.ReadLine();
+            snake.Move();
+            Thread.Sleep(100);
+            snake.Move();
+            Thread.Sleep(100);
+            snake.Move();
+            Thread.Sleep(100);
+            //Console.ReadLine();
         }
         
         

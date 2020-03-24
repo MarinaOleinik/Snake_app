@@ -47,6 +47,13 @@ namespace Snake_app
             }
 
         }
+
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
+        }
+
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
