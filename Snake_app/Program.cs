@@ -6,8 +6,10 @@ namespace Snake_app
 {
     class Program
     {
+        
         static void Main(string[] args)
-        {
+        {   
+            
             Console.Title = "Snake";
             Console.SetWindowSize(101, 26);
            
@@ -24,12 +26,18 @@ namespace Snake_app
             
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
-            snake.Move();
-            Thread.Sleep(100);
-            snake.Move();
-            Thread.Sleep(100);
-            snake.Move();
-            Thread.Sleep(100);
+
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandleKey(key.Key);
+                }
+                Thread.Sleep(100);
+                snake.Move();
+            }
+                    
             //Console.ReadLine();
         }
         
