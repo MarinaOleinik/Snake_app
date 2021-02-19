@@ -8,8 +8,10 @@ namespace Snake_app
     class Snake:Figure
     {
         public Direction direction;
+        
         public Snake(Point tail,int length, Direction _direction)
         {
+           
             direction = _direction;
             pList = new List<Point>();
             for (int i = 0; i < length; i++)
@@ -19,7 +21,6 @@ namespace Snake_app
                 pList.Add(p);
             }
         }
-
         internal void Move()
         {
             Point tail = pList.First();
@@ -57,6 +58,7 @@ namespace Snake_app
             {
                 direction = Direction.UP;
             }
+            
 
         }
         internal bool Eat(Point food)

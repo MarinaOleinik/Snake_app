@@ -9,7 +9,7 @@ namespace Snake_app
         public int x;
         public int y;
         public char sym;
-        public bool isPoison;
+        
         public Point()
         {
 
