@@ -13,7 +13,7 @@ namespace Snake_app
             pList = new List<Point>();
             for (int x = xLeft; x <= xReight; x++)
             {
-                Point p = new Point(x, y, sym);
+                Point p = new Point(x, y, sym,ConsoleColor.White);
                 pList.Add(p);
             }
 

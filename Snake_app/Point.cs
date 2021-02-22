@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 
 namespace Snake_app
@@ -9,23 +10,23 @@ namespace Snake_app
         public int x;
         public int y;
         public char sym;
-        
+        public ConsoleColor color;
         public Point()
         {
-
         }
-        public Point(int x_, int y_, char sym_)
+        public Point(int x_, int y_, char sym_, ConsoleColor color_)
         {
             x = x_;
             y = y_;
             sym = sym_;
-            //this.isPoison = isPoison;
+            color=color_;
         }
-        public Point(Point p)
+        public Point(Point p, ConsoleColor color_)
         {
             x = p.x;
             y = p.y;
             sym = p.sym;
+            color = color_;
         }
         public void Move(int offset, Direction direction)
         {
@@ -57,6 +58,7 @@ namespace Snake_app
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
+            Console.ForegroundColor = color;
             Console.Write(sym);
         }
         public override string ToString()

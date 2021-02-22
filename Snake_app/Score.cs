@@ -8,18 +8,21 @@ namespace Snake_app
     {
         private int score;
         public int level;
+        public int speed;
         public Score(int score, int level)
         {
             this.score = score;
             this.level = level;
         }
-        public void ScoreUp()
+        public bool ScoreUp()
         {
             score += 1;
             if (score%10==0)
             {
                 level += 1;
+                return true;
             }
+            else { return false; }
         }
         public void ScoreWrite()
         {
