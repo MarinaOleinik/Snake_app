@@ -6,9 +6,9 @@ namespace Snake_app
 {
     class Program
     {
-        
-        static void Main(string[] args)
-        {   
+        public void game_draw()
+        {
+            Console.Clear();
             Console.Title = "Snake";
             Console.SetWindowSize(101, 26);
             HorizontalLIne upline = new HorizontalLIne(0, 100, 0, '+');
@@ -23,15 +23,15 @@ namespace Snake_app
             Sounds sound = new Sounds(settings.GetResourceFolder());
             sound.Play("stardust.mp3");
 
-            Point p = new Point(4, 5, '*',ConsoleColor.Red);         
+            Point p = new Point(4, 5, '*', ConsoleColor.Red);
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
-            FoodCreator foodCreator = new FoodCreator(101, 26, '¤',ConsoleColor.Green);
+            FoodCreator foodCreator = new FoodCreator(101, 26, '¤', ConsoleColor.Green);
             Point food = foodCreator.CreateFood();
             food.Draw();
-            Score score = new Score(0,1);//score =0, level=1
+            Score score = new Score(0, 1);//score =0, level=1
             score.speed = 400;
-            score.ScoreWrite();           
+            score.ScoreWrite();
             while (true)
             {
                 if (snake.Eat(food))
@@ -55,8 +55,24 @@ namespace Snake_app
                 {
                     ConsoleKeyInfo key = Console.ReadKey(true);
                     snake.HandleKey(key.Key);
-                }  
-            }        
+                }
+            }
+        }
+        
+        static void Main(string[] args)
+        {
+            Start start = new Start();
+            if (start.choice()==1)
+            {
+                Program prog = new Program();
+                prog.game_draw();
+            }
+            else
+            {
+                start.Game_stop();
+            }
+
+                    
             //Console.ReadLine();
         } 
     }
