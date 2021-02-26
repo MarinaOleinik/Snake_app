@@ -9,6 +9,7 @@ namespace Snake_app
         LEFT,
         RIGHT,
         UP,
-        DOWN
+        DOWN,
+        PAUSE
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 
 namespace Snake_app
 {
@@ -42,9 +43,13 @@ namespace Snake_app
             {
                 y = y- offset;
             }
-            else
+            else if (direction == Direction.DOWN)
             {
                 y = y + offset;
+            }
+            else if (direction==Direction.PAUSE)
+            {
+                
             }
 
         }

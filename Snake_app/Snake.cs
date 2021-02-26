@@ -22,16 +22,19 @@ namespace Snake_app
         }
         internal void Move()
         {
-            Point tail = pList.First();
-            pList.Remove(tail);
-            Point head = GetNextPoint();
-            pList.Add(head);
-            tail.Clear();
-            head.Draw();            
+            if (direction!=Direction.PAUSE)
+            {
+                Point tail = pList.First();
+                pList.Remove(tail);
+                Point head = GetNextPoint();
+                pList.Add(head);
+                tail.Clear();
+                head.Draw();   
+            }
+                     
         }
         public Point GetNextPoint()
-        {
-            Point head = pList.Last();
+        {   Point head = pList.Last();
             Point nextPoint = new Point(head,ConsoleColor.Red);
             nextPoint.Move(1, direction);
             return nextPoint;
@@ -53,6 +56,10 @@ namespace Snake_app
             else if (key == ConsoleKey.UpArrow)
             {
                 direction = Direction.UP;
+            }
+            else if (key==ConsoleKey.Spacebar)
+            {
+                direction = Direction.PAUSE;
             }
             
 
