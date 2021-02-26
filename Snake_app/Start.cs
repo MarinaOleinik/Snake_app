@@ -16,12 +16,25 @@ namespace Snake_app
             
             Console.SetCursorPosition(0, 5);
             Console.WriteLine("------------------");
-            Console.WriteLine("Start game - S\nStop game - Q");
+            Console.WriteLine(" Start game - S\n Stop game - Q");
             Console.WriteLine("------------------");
             key = Console.ReadKey(true);
+
             if (key.Key == ConsoleKey.S)
             {
-                valik = 1;
+                Console.SetCursorPosition(0, 5);
+                Console.WriteLine("------------------");
+                Console.WriteLine(" Large map - L\n Small map - S");
+                Console.WriteLine("------------------");
+                key = Console.ReadKey(true);
+                if (key.Key == ConsoleKey.L)
+                {
+                    valik = 151;
+                }
+                else
+                {
+                    valik = 101;
+                }
             }
             else if (key.Key == ConsoleKey.Q)
             {
@@ -33,11 +46,16 @@ namespace Snake_app
         public void Game_stop()
         {
             Console.Clear();
+            Console.WriteLine("--------------");
+            Console.WriteLine("              ");
             Console.WriteLine("     ()_()    ");
-            Console.WriteLine("    ( o_o )   ");
+            Console.WriteLine("    ( o_- )   ");
             Console.WriteLine("     ()o()    ");
             Console.WriteLine("     ()_()    ");
             Console.Beep();
+
+            Environment.Exit(1);
+
 
         }
     }

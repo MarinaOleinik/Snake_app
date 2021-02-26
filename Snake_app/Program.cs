@@ -6,15 +6,17 @@ namespace Snake_app
 {
     class Program
     {
-        public void game_draw()
+
+        //int ymap = 0;
+        public void game_draw( int ymap)
         {
             Console.Clear();
             Console.Title = "Snake";
-            Console.SetWindowSize(101, 26);
-            HorizontalLIne upline = new HorizontalLIne(0, 100, 0, '+');
-            HorizontalLIne downline = new HorizontalLIne(0, 100, 25, '+');
+            Console.SetWindowSize(ymap, 26);
+            HorizontalLIne upline = new HorizontalLIne(0, ymap-1, 0, '+');
+            HorizontalLIne downline = new HorizontalLIne(0, ymap-1, 25, '+');
             VerticalLine leftline = new VerticalLine(1, 25, 0, '+');
-            VerticalLine rightline = new VerticalLine(1, 25, 100, '+');
+            VerticalLine rightline = new VerticalLine(1, 25, ymap-1, '+');
             upline.Draw();
             downline.Draw();
             leftline.Draw();
@@ -63,11 +65,13 @@ namespace Snake_app
         
         static void Main(string[] args)
         {
+            
             Start start = new Start();
-            if (start.choice()==1)
+            int ymap=start.choice();
+            if (ymap == 151 || ymap == 101)
             {
                 Program prog = new Program();
-                prog.game_draw();
+                prog.game_draw(ymap);
             }
             else
             {
