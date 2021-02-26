@@ -22,7 +22,8 @@ namespace Snake_app
             Parametrs settings = new Parametrs();
             Sounds sound = new Sounds(settings.GetResourceFolder());
             sound.Play("stardust.mp3");
-
+            Sounds soundeat = new Sounds(settings.GetResourceFolder());
+            
             Point p = new Point(4, 5, '*', ConsoleColor.Red);
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
@@ -36,6 +37,7 @@ namespace Snake_app
             {
                 if (snake.Eat(food))
                 {
+                    soundeat.Play("lost.mp3");
                     score.ScoreUp();
                     score.ScoreWrite();
                     food = foodCreator.CreateFood();

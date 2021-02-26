@@ -33,7 +33,10 @@ namespace Snake_app
         public void Game_stop()
         {
             Console.Clear();
-            Console.WriteLine("Exit");
+            Console.WriteLine("     ()_()    ");
+            Console.WriteLine("    ( o_o )   ");
+            Console.WriteLine("     ()o()    ");
+            Console.WriteLine("     ()_()    ");
             Console.Beep();
 
         }
